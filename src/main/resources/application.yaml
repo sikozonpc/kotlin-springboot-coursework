@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: course-catalog-service
+  datasource:
+    # H2 - In memory DB
+    # url: jdbc:h2:mem:testdb
+    # driver-class-name: org.h2.Driver
+    # username: sa
+    # password: password
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/courses
+    username: postgres
+    password: mypassword
+  jpa:
+    # database: h2
+    # database-platform: org.hibernate.dialect.H2Dialect
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop # recreates the db, not recomended for prod
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+
+  h2:
+    console:
+    enabled: true
+message: Hello from DEV profile

@@ -1,0 +1,4 @@
+spring:
+  application:
+    name: course-catalog-service
+message: Hello from PROD profile
